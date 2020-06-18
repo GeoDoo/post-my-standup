@@ -1,6 +1,11 @@
 (ns post-my-standup.core
-  (:gen-class))
+  (:require [clj-http.client :as client]))
 
 (defn -main
-  [& args]
-  (println "Hello, World!"))
+  []
+  (client/get "https://geodoo.work/wp-json/wp/v2/posts"
+              {:async? true}
+              ;; respond callback
+              (fn [response] (println "response is:" response))
+              ;; raise callback
+              (fn [exception] (println "exception message is: " (.getMessage exception)))))
