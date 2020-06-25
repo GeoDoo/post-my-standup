@@ -5,6 +5,7 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [clj-http "3.10.1"]
+                 [cheshire "5.10.0"]
                  [crouton "0.1.2"]]
   :main ^:skip-aot post-my-standup.core
   :target-path "target/%s"
